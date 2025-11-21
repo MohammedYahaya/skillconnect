@@ -1,16 +1,9 @@
 import React, { useEffect } from 'react'
 import Lenis from '@studio-freight/lenis'
-import Navbar from "./Components/Navbar"
-import Hero from "./Components/Hero"
-import Categories from "./Components/Categories"
-import Workflow from "./Components/How it works"
-import Provider from "./Components/Provider"
-import Happy from "./Components/Happy"
-import About from "./Components/About"
-
-
-
-
+import Home from "./Components/Home"
+import Login from "./Pages/Login"
+import Signup from "./Pages/Register"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 export default function App() {
@@ -30,13 +23,14 @@ export default function App() {
 
   return (
     <div className="">
-     <Navbar />
-     <Hero />
-     <Workflow />
-     <Categories />
-     <Provider />
-     <Happy />
-     <About />
+       <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/signup" element={<Signup />}></Route>
+            <Route path="*" element={<h1>404 NOT FOUND</h1>}></Route>
+          </Routes>
+      </BrowserRouter>
     </div>
   )
 }

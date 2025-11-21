@@ -1,77 +1,78 @@
-import React,{useEffect} from 'react'
-import happyImage from "../Images/positive-emotions-portrait-happy-young-dark-skinned-man-with-afro-haircut-casual-stylish-outfit-spreading-hands-with-excitement-screaming-cheering-favorite-football-team (1).webp"
+import React, { useEffect } from "react";
+import happyImage from "../Images/positive-emotions-portrait-happy-young-dark-skinned-man-with-afro-haircut-casual-stylish-outfit-spreading-hands-with-excitement-screaming-cheering-favorite-football-team (1).webp";
 import gsap from "gsap";
-import { SplitText } from 'gsap/SplitText'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Happy = () => {
-
   useEffect(() => {
-  gsap.registerPlugin(ScrollTrigger, SplitText);
+    gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  document.fonts.ready.then(() => {
-    const header1 = new SplitText(".header1", {
-      type: "lines",
-      autoSplit: true,
-      mask: "lines",
+    document.fonts.ready.then(() => {
+      const header1 = new SplitText(".header1", { type: "lines", mask: "lines" });
+      const header2 = new SplitText(".header2", { type: "lines", mask: "lines" });
+
+      gsap.from(header1.lines, {
+        y: 30,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".header1",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      gsap.from(header2.lines, {
+        y: -30,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".header2",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
     });
-
-    const header2 = new SplitText(".header2", {
-      type: "lines",
-      autoSplit: true,
-      mask: "lines",
-    });
-
-    // Animate Header 1
-    gsap.from(header1.lines, {
-      y: 30,
-      opacity: 0,
-      ease: "sine.inOut",
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".header1",
-        start: "top 65%",
-        end: "top center",
-        markers: true,
-      }
-    });
-
-    // Animate Header 2
-    gsap.from(header2.lines, {
-      y: -30,
-      opacity: 0,
-      ease: "sine.inOut",
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".header2",
-        start: "top 80%",
-        end: "top center",
-        markers: true,
-      }
-    });
-
-  });
-}, []);
+  }, []);
 
   return (
-    <section className="min-h-screen p-6 relative bg-teal-500 flex flex-col justify-center mt-[12em] items-center">
-    	<div className="absolute w-full h-full bg-white -top-[12em] -z-10"></div>
-      <div className="absolute -top-[5.2em] bg-white shadow-lg w-[36em] h-[20em] rounded-lg">
-    	</div>
-        <img src={happyImage} alt="happy image"  className="absolute -top-[22.5em] w-2/3 "/>
+    <section className="relative bg-teal-500 py-20 px-6 md:px-12 lg:px-20 flex flex-col lg:flex-row items-center gap-12 min-h-screen">
+      {/* Left: Image */}
+      <div className="w-full lg:w-1/2 flex justify-center">
+        <img
+          src={happyImage}
+          alt="happy customers"
+          loading="lazy"
+          className="w-10/12 md:w-9/12 lg:w-full rounded-lg shadow-lg"
+        />
+      </div>
 
-        <h2 className="text-8xl header1 z-20 syncopate-bold text-white leading-11 tracking-tighter mt-[1.6em] ml-2">Happy customers</h2>
-        <h2 className="text-8xl header2 z-20 poppins-regular text-white">Reliable.<span className=" text-8xl syncopate-bold tracking-tighter">services</span></h2>
+      {/* Right: Text */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left gap-6">
+        <h2 className="header1 text-4xl syncopate-bold sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
+          Happy customers
+        </h2>
+        <h2 className="header2 syncopate-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
+          Reliable. <span className="font-extrabold">Services</span>
+        </h2>
+        <p className="text-white text-lg md:text-xl mt-4">
+          Our customers trust us for fast, reliable, and professional service. See why everyone is smiling!
+        </p>
 
-        <div className="absolute p-2 -bottom-7 w-12 h-20 rounded-full bg-teal-500 border-[8px] border-white flex justify-center ">
-          <svg className xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="34px" fill="#"><path d="M480-80 200-360l56-56 184 183v-647h80v647l184-184 56 57L480-80Z"/></svg>
-        </div>
-        <div className="absolute z-10 overflow-hidden opacity-60 -right-[16em] w-[30em] h-[30em] bg-transparent z-10 border-[2em] border-black rounded-full"></div>
-        <div className="absolute z-10 overflow-hidden opacity-60 -right-[12em] w-[38em] h-[38em] bg-transparent z-10 border-[2em] border-black rounded-full"></div>
+        {/* CTA button */}
+        <button className="mt-6 bg-white text-teal-500 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition">
+          Join Us
+        </button>
+      </div>
 
+      {/* Decorative circles */}
+      <div className="absolute -top-16 -left-16 w-36 h-36 rounded-full border-4 border-white opacity-20"></div>
+      <div className="absolute bottom-10 -right-10 w-48 h-48 rounded-full border-4 border-white opacity-20"></div>
     </section>
-  )
-}
+  );
+};
 
 export default Happy;

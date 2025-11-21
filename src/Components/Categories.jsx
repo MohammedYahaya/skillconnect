@@ -54,7 +54,6 @@ export default function Categories({
 
   const length = images.length;
 
-  // Fade animations
   useEffect(() => {
     // fade out all slides
     gsap.to(slideRef.current, {
@@ -63,14 +62,12 @@ export default function Categories({
       ease: "power2.out",
     });
 
-    // fade in the active slide
     gsap.to(slideRef.current[index], {
       opacity: 1,
       duration: 1,
       ease: "power2.out",
     });
 
-    // text animation
     gsap.fromTo(
       textRef.current[index],
       { opacity: 0, y: 20 },
@@ -78,7 +75,6 @@ export default function Categories({
     );
   }, [index]);
 
-  // Autoplay
   useEffect(() => {
     if (!autoPlay) return;
 
@@ -105,6 +101,7 @@ export default function Categories({
             <img
               src={img.src}
               alt={img.title}
+              loading="lazy"
               className="w-full h-full object-cover brightness-75 shadow-2xl shadow-black/40"
             />
 
@@ -121,7 +118,6 @@ export default function Categories({
           </div>
         ))}
 
-        {/* Arrows */}
         <div className="absolute inset-0 flex items-center justify-between px-4 z-20">
           <button
             onClick={prev}
@@ -150,7 +146,6 @@ export default function Categories({
           </button>
         </div>
 
-        {/* Indicators */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
           {images.map((_, i) => (
             <button

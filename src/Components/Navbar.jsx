@@ -4,10 +4,10 @@ import React, { useState } from "react";
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   return (
-    <nav className="w-full py-4 px-8 flex justify-between items-center bg-white shadow">
-<h1 className="syncopate-bold text-2xl font-extrabold flex items-center">
+    <nav className="w-full p-4 bg-transparent nav z-50 sticky top-0 mt-0 flex justify-between items-center">
+            <h1 className="syncopate-bold text-2xl font-extrabold flex items-center">
             Skill
-            <span className="text-blue-600 text-3xl font-extrabold relative ">
+            <span className="text-teal-500 text-3xl font-extrabold relative ">
                 <span className="absolute -top-1 -right-2 text-blue-300 opacity-60 text-lg">•</span>
                 Connect
             </span>
@@ -18,14 +18,14 @@ const Navbar = () => {
             <input type="submit" value="search" placeholder="serach here" className="px-4 py-1 absolute right-1 cursor-pointer bg-black text-white hover:bg-black/60 transition rounded-full outline outline-1 outline-black"/>
           </form>
         </div>
-        <ul className="hidden lg:flex justify-between items-center gap-12 bg-white">
+        <ul className="hidden lg:flex justify-between items-center gap-12">
           <div className="flex justify-between items-center gap-6">
             <li ><a className="mask-link" data-text="Categories" href="#"><span className="mask-link__text font-jakarta">Categories</span></a> </li>
             <li ><a className="mask-link" data-text="How it works" href="#"><span className="mask-link__text font-jakarta">How it works</span></a> </li>
             <li ><a className="mask-link" data-text="FAQ" href="#"><span className="mask-link__text font-jakarta">FAQ</span></a> </li>
           </div>
           <div>
-            <li><a className="px-4 group py-2 bg-teal-500 hover:bg-teal-600 transition shadow-lg gap-1 cursor-pointer text-white rounded-full flex font-jakarta justify-center items-center">Sign up<svg 
+            <li><a className="px-4 group py-2 bg-orange-400 hover:bg-orange-500 transition shadow-lg gap-1 cursor-pointer text-white rounded-full flex font-jakarta justify-center items-center">Sign up<svg 
             fill="currentColor"
       className="w-6 h-6 group-hover:translate-x-1 transition"
       viewBox="0 0 32 32" 
@@ -83,7 +83,7 @@ const Navbar = () => {
           <li ><a className="mask-link" data-text="Categories" href="#"><span className="mask-link__text font-jakarta">Categories</span></a> </li>
           <li ><a className="mask-link" data-text="How it works" href="#"><span className="mask-link__text font-jakarta">How it works</span></a> </li>
           <li ><a className="mask-link" data-text="FAQ" href="#"><span className="mask-link__text font-jakarta">FAQ</span></a> </li>
-           <li><a className="px-4 py-2 bg-teal-500 hover:bg-teal-600 transition shadow-lg gap-1 cursor-pointer text-white rounded-full flex justify-center items-center">Sign up<svg 
+           <li><a className="px-4 py-2 bg-orange-400 hover:bg-orange-500 transition shadow-lg gap-1 cursor-pointer text-white rounded-full flex justify-center items-center">Sign up<svg 
             fill="currentColor"
       className="w-6 h-6"
       viewBox="0 0 32 32" 

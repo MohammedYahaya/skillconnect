@@ -78,3 +78,13 @@
 .clip{
   clip-path: circle(78% at 50% 0);
 }
+
+.sticky{
+  position: sticky;
+  top: 0;
+}
+
+.isnav {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
