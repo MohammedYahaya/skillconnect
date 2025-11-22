@@ -94,9 +94,9 @@ const About = () => {
 
         </div>
 
-        <button className="mt-8 bg-orange-400 about-element translate-x-20 opacity-0 hover:bg-orange-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg w-max transition">
+        <a href="/signup" className="mt-8 bg-orange-400 about-element translate-x-20 opacity-0 hover:bg-orange-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg w-max transition">
           Get Started
-        </button>
+        </a>
       </div>
     </section>
   );

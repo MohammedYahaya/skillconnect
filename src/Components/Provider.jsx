@@ -13,7 +13,6 @@ const Provider = () => {
 
     const providers = gsap.utils.toArray(".provider");
 
-    // Desktop / tablet
     gsap.fromTo(
       providers,
       { opacity: 0, y: 50 },
@@ -31,7 +30,6 @@ const Provider = () => {
       }
     );
 
-    // Mobile
     gsap.matchMedia().add("(max-width:480px)", () => {
       gsap.fromTo(
         providers,
@@ -126,6 +124,18 @@ const Provider = () => {
           </div>
         ))}
       </div>
+      <a href="/providers" className="mt-14 bg-orange-400 group about-element translate-x-20 flex justify-center gap-1 items-center opacity-0 hover:bg-orange-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition">
+          see more <svg 
+            fill="currentColor"
+      className="w-6 h-6 group-hover:translate-x-1 transition"
+      viewBox="0 0 32 32" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g data-name="Layer 2" id="Layer_2">
+        <path d="M22,9a1,1,0,0,0,0,1.42l4.6,4.6H3.06a1,1,0,1,0,0,2H26.58L22,21.59A1,1,0,0,0,22,23a1,1,0,0,0,1.41,0l6.36-6.36a.88.88,0,0,0,0-1.27L23.42,9A1,1,0,0,0,22,9Z"/>
+      </g>
+    </svg>
+        </a>
     </section>
   );
 };

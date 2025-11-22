@@ -89,7 +89,7 @@ export default function Categories({
   const next = () => setIndex((i) => (i + 1) % length);
 
   return (
-    <section className="w-full relative overflow-hidden">
+    <section className="w-full relative overflow-hidden " id="Categories">
       <h2 className="text-4xl mb-4 font-bold text-center syncopate-bold">Categories</h2>
       <div className="w-full h-[60vh] md:h-screen relative">
         {images.map((img, i) => (

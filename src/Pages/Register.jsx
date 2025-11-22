@@ -2,99 +2,100 @@ import { useState } from "react";
 import signUpImg from "../Images/Sign up.gif"
 import {Link} from "react-router-dom"
 import React from "react";
+import {createUserWithEmailAndPassword} from "firebase/auth"
+import {auth} from "../firebase"
+import {useNavigate} from "react-router-dom"
+import Navbar from "../Components/Navbar"
 
 
 const Register = () => {
 
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const navigate = useNavigate()
+
+
+    const handleSignUp = async(e) => {
+
+        e.preventDefault()
+
+        try{
+
+            await createUserWithEmailAndPassword(auth,email,password)
+            alert("Account created successfully")
+            navigate("/login")
+        }
+        catch (error){
+            alert(error.message)
+        }
+
+    }
+
     return (
-        <section className="h-screen bg-gray-200 flex justify-center items-center">
-            <div className = "bg-white/50 w-[70em] h-[39em] overflow-hidden flex rounded-md">
+        <section className="h-screen flex flex-col justify-center items-center">
+           <Navbar />
+            <div className = "bg-white mt-12 w-[70vw] h-[39em] overflow-hidden flex rounded-md">
                 <img
                     src = { signUpImg }
-                    className = "object-fit w-1/2 hover:scale-105 transition duration-300"
+                    className = "object-fit md:block hidden w-1/2 hover:scale-105 transition duration-300"
                     alt = "Register Image"
                 />
             <form
                 method="post"
-                className="w-full h-full p-6 flex flex-col gap-4 bg-white"
+                className="w-full h-full p-6 flex bg-teal-500 flex-col justify-center items-center gap-4 "
+                onSubmit = {handleSignUp}
             >
                 <div>
-                    <h1 className="text-4xl bg-gradient-to-tl from-teal-400 to-teal-900 bg-clip-text text-transparent text-center font-semi-bold uppercase">
+                    <h1 className="text-4xl text-white text-center font-semi-bold uppercase">
                         Register
                     </h1>
                 </div>
+              
                 <div className="w-full flex flex-col">
                     <label
-                        className="w-full text-md "
-                        htmlFor="username"
-                    >
-                        username:
-                    </label>
-                    <input
-                        className="p-2 rounded-md focus:outline-none ring-1 ring-teal-500 transition duration-300 "
-                        type="text"
-                        placeholder="username"
-                        name="username"
-                    />
-                </div>
-                <div className="w-full flex flex-col">
-                    <label
-                        className="w-full text-md "
+                        className="w-full text-md text-white"
                         htmlFor="email"
                     >
                         email:
                     </label>
                     <input
-                        className="p-2 rounded-md focus:outline-none ring-1 ring-teal-500 transition duration-300 "
+                        className="p-2 rounded-md focus:outline-none ring-1 focus:ring-orange-500 transition duration-300 "
                         type="email"
                         placeholder="email"
                         name="email"
+                        onChange = {(e)=> setEmail(e.target.value)}
                     />
                 </div>
                 <div className="w-full flex flex-col">
                     <label
-                        className="w-full text-md "
+                        className="w-full text-md text-white"
                         htmlFor="password"
                     >
                         password:
                     </label>
                     <input
-                        className="p-2 rounded-md focus:outline-none ring-1 ring-teal-500 transition duration-300 "
+                        className="p-2 rounded-md focus:outline-none ring-1 focus:ring-orange-500 transition duration-300 "
                         type="password"
                         placeholder="password"
                         name="password"
+                        onChange = {(e)=> setPassword(e.target.value)}
                     />
                 </div>
-                <div className="w-full flex flex-col">
-                    <label
-                        className="w-full text-md "
-                        htmlFor="confirm password"
-                    >
-                        confirm password:
-                    </label>
-                    <input
-                        className="p-2 rounded-md focus:outline-none ring-1 ring-teal-500 transition duration-300 "
-                        type="password"
-                        placeholder="confirm password"
-                        name="password2"
-                    />
-                </div>
-                <div className="mt-2">
+               
+                <div className="mt-2 w-full">
                     <button className="w-full bg-orange-400 py-2 rounded-md text-white hover:bg-orange-500 text-lg">
                         Register
                     </button>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 text-white">
                     <p>already have an account?</p>
                     <Link
-                        className="text-blue-600 hover:underline transition duration-300"
+                        className="text-white hover:underline transition duration-300"
                         to="/login"
                     >
                         Login
                     </Link>
-                </div>
-                <div>
-                    <p className="text-center">or</p>
                 </div>
             </form>
         </div>

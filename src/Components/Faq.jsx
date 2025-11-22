@@ -41,7 +41,7 @@ const Faq = () => {
   }, []);
 
   return (
-    <section className="w-full py-20 px-6 lg:px-20 bg-white">
+    <section className="w-full py-20 px-6 lg:px-20 bg-white" id="faqs">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl font-extrabold syncopate-bold text-gray-900">
           Frequently Asked <span className="text-teal-500">Questions</span>

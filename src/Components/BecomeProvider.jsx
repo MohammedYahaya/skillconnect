@@ -10,7 +10,6 @@ const BecomeProvider = () => {
   const providers = gsap.utils.toArray(".become-provider");
   const pnumbers = gsap.utils.toArray(".provider-number");
 
-  // Cards animation
   gsap.fromTo(
     providers,
     { opacity: 0, y: 50 },
@@ -28,7 +27,6 @@ const BecomeProvider = () => {
     }
   );
 
-  // Numbers animation
   gsap.fromTo(
     pnumbers,
     { opacity: 0, x: -50 },
@@ -50,7 +48,6 @@ const BecomeProvider = () => {
 
   return (
     <section className="w-full bg-white py-20 px-6 lg:px-20">
-      {/* Section Heading */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h2 className="text-4xl font-extrabold text-gray-900 syncopate-bold">
           Become a Service <span className="text-teal-500">Provider</span>
@@ -60,7 +57,6 @@ const BecomeProvider = () => {
         </p>
       </div>
 
-      {/* Benefits Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
         {[
           {
@@ -95,7 +91,6 @@ const BecomeProvider = () => {
         ))}
       </div>
 
-      {/* How It Works */}
       <div className="max-w-4xl mx-auto mb-20">
         <h3 className="text-2xl font-bold syncopate-bold text-gray-900 mb-6 text-center">
           How It Works
@@ -138,11 +133,10 @@ const BecomeProvider = () => {
         </div>
       </div>
 
-      {/* CTA */}
       <div className="text-center">
-        <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg shadow-lg transition">
+        <a href="/signup" className="bg-orange-400 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg shadow-lg transition">
           Start Earning Today
-        </button>
+        </a>
       </div>
     </section>
   );

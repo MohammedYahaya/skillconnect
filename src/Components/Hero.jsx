@@ -82,7 +82,7 @@ const Hero = () => {
         Connect instantly with trusted micro-service providers. fast, reliable, and right near you.
       </p>
 
-      <button className="relative hero-text opacity-0 translate-y-6 z-40 bg-orange-400 hover:bg-orange-500 font-jakarta transition px-8 py-3 text-white text-lg rounded-full shadow-xl flex items-center gap-2 group">
+      <a href="/providers" className="relative hero-text opacity-0 translate-y-6 z-40 bg-orange-400 hover:bg-orange-500 font-jakarta transition px-8 py-3 text-white text-lg rounded-full shadow-xl flex items-center gap-2 group">
         Explore Services
         <svg
           fill="currentColor"
@@ -92,7 +92,7 @@ const Hero = () => {
         >
           <path d="M22,9a1,1,0,0,0,0,1.42l4.6,4.6H3.06a1,1,0,1,0,0,2H26.58L22,21.59A1,1,0,0,0,22,23a1,1,0,0,0,1.41,0l6.36-6.36a.88.88,0,0,0,0-1.27L23.42,9A1,1,0,0,0,22,9Z"/>
         </svg>
-      </button>
+      </a>
 
       <img
         src={HeroImage}

@@ -23,7 +23,7 @@ const Workflow = () => {
         ease: "power2.out",
         stagger: 0.3,
         scrollTrigger: {
-          trigger: ".work:first-child", // trigger when first step appears
+          trigger: ".work:first-child",
           start: "top 85%",
           toggleActions: "play none none none",
         },
@@ -51,7 +51,7 @@ const Workflow = () => {
   ];
 
   return (
-    <section className="relative min-h-screen py-20 flex flex-col items-center gap-16">
+    <section id="how it works" className="relative min-h-screen py-20 flex flex-col items-center gap-16">
       <h2 className="text-4xl font-bold text-center syncopate-bold">
         How It <span className="text-teal-500">Works</span>
       </h2>

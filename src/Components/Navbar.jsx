@@ -5,6 +5,7 @@ const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   return (
     <nav className="w-full p-4 bg-transparent nav z-50 sticky top-0 mt-0 flex justify-between items-center">
+            <a href="/">
             <h1 className="syncopate-bold text-2xl font-extrabold flex items-center">
             Skill
             <span className="text-teal-500 text-3xl font-extrabold relative ">
@@ -12,6 +13,7 @@ const Navbar = () => {
                 Connect
             </span>
         </h1>
+      </a>
         <div className="w-[20em]">
           <form className="hidden lg:flex justify-center items-center relative">
             <input type="text" placeholder="search here" className="focus:outline-teal-500 transition p-2 w-full rounded-full outline outline-1 outline-black"/>
@@ -20,12 +22,12 @@ const Navbar = () => {
         </div>
         <ul className="hidden lg:flex justify-between items-center gap-12">
           <div className="flex justify-between items-center gap-6">
-            <li ><a className="mask-link" data-text="Categories" href="#"><span className="mask-link__text font-jakarta">Categories</span></a> </li>
-            <li ><a className="mask-link" data-text="How it works" href="#"><span className="mask-link__text font-jakarta">How it works</span></a> </li>
-            <li ><a className="mask-link" data-text="FAQ" href="#"><span className="mask-link__text font-jakarta">FAQ</span></a> </li>
+            <li ><a className="mask-link" data-text="Categories" href="#Categories"><span className="mask-link__text font-jakarta">Categories</span></a> </li>
+            <li ><a className="mask-link" data-text="How it works" href="#how it works"><span className="mask-link__text font-jakarta">How it works</span></a> </li>
+            <li ><a className="mask-link" data-text="FAQ" href="#faqs"><span className="mask-link__text font-jakarta">FAQ</span></a> </li>
           </div>
           <div>
-            <li><a className="px-4 group py-2 bg-orange-400 hover:bg-orange-500 transition shadow-lg gap-1 cursor-pointer text-white rounded-full flex font-jakarta justify-center items-center">Sign up<svg 
+            <li><a href="/signup" className="px-4 group py-2 bg-orange-400 hover:bg-orange-500 transition shadow-lg gap-1 cursor-pointer text-white rounded-full flex font-jakarta justify-center items-center">Sign up<svg 
             fill="currentColor"
       className="w-6 h-6 group-hover:translate-x-1 transition"
       viewBox="0 0 32 32" 
@@ -80,10 +82,10 @@ const Navbar = () => {
         </div>
       <div className={`transition-opacity duration-300 ${isClicked?"opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} w-full p-12 bg-gray-100 absolute top-16 left-0 z-40`}>
         <ul className="flex flex-col justify-center gap-4">
-          <li ><a className="mask-link" data-text="Categories" href="#"><span className="mask-link__text font-jakarta">Categories</span></a> </li>
-          <li ><a className="mask-link" data-text="How it works" href="#"><span className="mask-link__text font-jakarta">How it works</span></a> </li>
-          <li ><a className="mask-link" data-text="FAQ" href="#"><span className="mask-link__text font-jakarta">FAQ</span></a> </li>
-           <li><a className="px-4 py-2 bg-orange-400 hover:bg-orange-500 transition shadow-lg gap-1 cursor-pointer text-white rounded-full flex justify-center items-center">Sign up<svg 
+          <li ><a className="mask-link" data-text="Categories" href="#Categories"><span className="mask-link__text font-jakarta">Categories</span></a> </li>
+          <li ><a className="mask-link" data-text="How it works" href="#how it works"><span className="mask-link__text font-jakarta">How it works</span></a> </li>
+          <li ><a className="mask-link" data-text="FAQ" href="#faqs"><span className="mask-link__text font-jakarta">FAQ</span></a> </li>
+           <li><a href="/signup" className="px-4 py-2 bg-orange-400 hover:bg-orange-500 transition shadow-lg gap-1 cursor-pointer text-white rounded-full flex justify-center items-center">Sign up<svg 
             fill="currentColor"
       className="w-6 h-6"
       viewBox="0 0 32 32" 
